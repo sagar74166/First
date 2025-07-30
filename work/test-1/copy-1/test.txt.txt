@@ -1,0 +1,7 @@
+select campaign_id, campaign_name, campaign_budget,
+case
+when campaign_budget <= 1500 then 'Low'
+when campaign_budget > 1500 and campaign_budget < 2000 then 'Medium'
+when campaign_budget >= 2000 then 'High'
+else 'others'
+end as budget_level from campaigns;
